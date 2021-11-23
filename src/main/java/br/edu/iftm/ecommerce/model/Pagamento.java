@@ -24,24 +24,19 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "fluxo_caixa")
+@Table(name = "pagamento")
 @Getter @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class FluxoCaixa implements Serializable {
+public class Pagamento implements Serializable {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @NonNull
     private Integer id;
-    private String descricao;
-    @Column(name = "tipo_movimento")
-    private String tipoMovimento;
-    private BigDecimal valor;
-    @Column(name = "data_movimento")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataMovimento;
-
+    private String nome;
+    private String url;
+  
     
 }
